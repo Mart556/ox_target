@@ -2,7 +2,7 @@
 
 :root {
   --color-default: #cfd2da;
-  --color-hover: white;
+  --color-hover: #fff;
 }
 
 body {
@@ -32,7 +32,7 @@ p {
 }
 
 .eye-hover {
-  fill: var(--color-default);
+  animation: glow 1.5s infinite;
 }
 
 #options-wrapper {
@@ -64,6 +64,9 @@ p {
   height: 22pt;
   width: 150pt;
   top: 0;
+
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .option-container:hover {
@@ -73,9 +76,13 @@ p {
     rgba(30, 30, 30, 0.6) 66%,
     rgba(57, 58, 63, 0) 100%
   );
+
   transform-origin: left top;
   color: var(--color-hover);
   margin-left: 4pt;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
 }
 
 .option-icon {
@@ -88,4 +95,17 @@ p {
 
 .option-label {
   font-weight: 500;
+}
+
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px #B67DC7) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 10px #C58DD3) brightness(1.5);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #B67DC7) brightness(1);
+  }
 }
